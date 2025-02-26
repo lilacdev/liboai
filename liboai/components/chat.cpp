@@ -125,6 +125,16 @@ void liboai::Conversation::EraseExtra() {
 	}
 }
 
+bool liboai::Conversation::AddUserData(nlohmann::json data) & noexcept(false) {
+	// if data provided is non-empty
+	if (!data.empty()) {
+		EraseExtra();
+		this->_conversation["messages"].push_back(data);
+		return true; // user data added successfully
+	}
+	return false; // data is empty
+}
+
 bool liboai::Conversation::AddUserData(std::string_view data) & noexcept(false) {
 	// if data provided is non-empty
 	if (!data.empty()) {
