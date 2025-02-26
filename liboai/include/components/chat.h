@@ -603,7 +603,7 @@ namespace liboai {
 				std::string_view name
 			) & noexcept(false);
 
-				/*
+			/*
 				@brief Adds JSON object user input to the conversation.
 					This method adds JSON user input to the conversation.
 					The user input is the user's input - such as a question
